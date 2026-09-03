@@ -1,3 +1,11 @@
+<?php
+    require 'rb.php';
+    R::setup ('mysql:host=localhost;dbname=projeto_estagio_2026_2',
+        'root', '');
+
+    $pessoa = R::findAll('tbPessoas');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,18 +38,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Emanuele Rodrigues Ferreira</td>
-                            <td>07/06/2006</td>
-                            <td>150.437.366-90</td>
-                            <td>(38) 99999-4161</td>
-                            <td>Montes Claros</td>
-                            <td>10x R$185,00</td>
-                            <td>Não há observações.</td>
-                            <td><span class="status">PENDENTE</span></td>
-                            <td><span class="editar" title="Editar">✏️</span>
-                            <span class="excluir" title="Excluir">🗑️</span></td>
-                        </tr>
+                        <?php foreach ($pessoa as $tbpessoas): ?>
+                                
+                            <tr>
+                                <td><?php echo $tbpessoas->nomecompleto; ?></td>
+                                <td><?php echo $tbpessoas->nascimento; ?></td>
+                                <td><?php echo $tbpessoas->cpf; ?></td>
+                                <td><?php echo $tbpessoas->celular; ?></td>
+                                <td><?php echo $tbpessoas->cidade; ?></td>
+                                <td><?php echo $tbpessoas->parcelas; ?></td>
+                                <td><?php echo $tbpessoas->observacoes; ?></td>
+                                <td><?php echo $tbpessoas->status; ?></td>
+                                <td>
+                                    <span class="editar" title="Editar">✏️</span>
+                                    <span class="excluir" title="Excluir">🗑️</span>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
