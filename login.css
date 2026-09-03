@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #E7E4DD;
+        color: #24271B;
+        font-family: "Google Sans", sans-serif;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0 auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .adm {
+        width: 700px;
+        border: 1px solid #7C7E4E;
+        border-radius: 5px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        border-top: 15px solid #2D5E2C;
+    }
+
+    .adm h1 {
+        color: #2D5E2C;
+        border-bottom: 2px solid #2D5E2C;
+        padding-bottom: 10px;
+    }
+
+    .sair {
+        display: block;
+        margin-left: auto;
+        align-self: flex-end;
+        padding: 8px;
+        background-color: white;
+        border: 2px solid #7C7E4E;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    label {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        display: inline-block;
+    }
+
+    label[for="user"] {
+            padding-top: 25px;
+        }
+
+    input, button {
+        transition: all 0.3s ease;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1.5px solid #7C7E4E;
+        border-radius: 5px;
+    }
+    
+    input:focus {
+        border-color: #2D5E2C;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(45, 94, 44, 0.15);
+    }
+
+    .entrar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        margin: 15px auto;
+        border: 1px solid #7C7E4E;
+        border-radius: 5px;
+        background-color: #2D5E2C;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        color: #E7E4DD;
+        margin-top: 30px;
+    }
+
+    .entrar:hover{
+        box-shadow: 0px 0px 15px 5px #2D5E2C;
+    }
+
+    button:hover{
+        background-color: #a9a9a9;
+        transform: translateY(-1px);
+    }
