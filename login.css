@@ -16,11 +16,10 @@
         justify-content: center;
         min-height: 100vh;
         margin: 0 auto;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     .adm {
-        width: 700px;
+        max-width: 700px;
         border: 1px solid #7C7E4E;
         border-radius: 5px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -44,6 +43,11 @@
         border-radius: 5px;
         font-size: 1.2rem;
         cursor: pointer;
+    }
+
+    .sair:hover{
+        background-color: #a9a9a9;
+        transform: translateY(-1px);
     }
 
     label {
@@ -95,9 +99,18 @@
 
     .entrar:hover{
         box-shadow: 0px 0px 15px 5px #2D5E2C;
+        transform: translateY(-1px);
     }
 
-    button:hover{
-        background-color: #a9a9a9;
-        transform: translateY(-1px);
+    @media (max-width: 540px) {
+        .adm {
+            width: 100%;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+            padding: 15px;
+        }
+        .entrar {
+            font-size: 16px;
+        }
     }

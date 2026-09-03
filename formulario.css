@@ -1,11 +1,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
+    /* Isso serve para "resetar" os espaçamentos padrão que os navegadores colocam sozinhos.  */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
+    /* Configurações gerais da página inteira */
     body {
         background-color: #E7E4DD;
         color: #24271B;
@@ -17,10 +19,11 @@
         margin: 30px auto;
         border: 1px solid #7C7E4E;
         border-radius: 5px;
-        width: 700px;
+        max-width: 700px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
+    /* Suaviza as animações */
     input, select, button {
         transition: all 0.3s ease;
     }
@@ -41,22 +44,42 @@
     img {
         height: 150px;
         width: auto;
+        max-width: 100%;
         filter: brightness(0) invert(1);
     }
 
+    /* A área onde os inputs vão ficar */
     .formulario {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 2rem 1rem;
+        padding: 1rem;
     }
 
+    .acesso {
+        display: block;
+        align-self: flex-end;
+        padding: 5px;
+        margin: 10px;
+        background-color: white;
+        border: 2px solid #7C7E4E;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .acesso:hover {
+        background-color: #a9a9a9;
+        transform: translateY(-1px);
+    }
+
+    /* Configura as áreas que dividem o formulário */
     .informacoes, .cadastro {
         width: 100%;
     }
 
-    .informacoes h2, h3 {
+    .informacoes h2, .informacoes h3 {
         padding: 0 0 15px 0;
     }
 
@@ -105,11 +128,7 @@
         box-shadow: 0 0 0 3px rgba(45, 94, 44, 0.15);
     }
 
-    select {
-        cursor: pointer;
-    }
-
-    #data{
+    select, #data {
         cursor: pointer;
     }
 
@@ -119,7 +138,7 @@
         align-items: center;
         width: 100%;
         padding: 10px;
-        margin: 15px auto;
+        margin: 30px auto 15px auto;
         border: 1px solid #7C7E4E;
         border-radius: 5px;
         background-color: #2D5E2C;
@@ -130,18 +149,51 @@
         letter-spacing: 1px;
         cursor: pointer;
         color: #E7E4DD;
-        margin-top: 30px;
     }
 
     .enviar:hover{
         box-shadow: 0px 0px 15px 5px #2D5E2C;
-    }
-
-    button:hover{
         background-color: #24471F;
         transform: translateY(-1px);
     }
 
     footer {
         padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            margin: 0 auto;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+        }
+
+        .cabecalho {
+            padding: 15px;
+            gap: 10px;
+        }
+
+        img {
+            height: 100px;
+        }
+
+        .formulario {
+            padding: 1.5rem 1rem;
+        }
+
+        .enviar {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        img {
+            height: 80px;
+        }
+
+        .cabecalho {
+            flex-direction: column; /* Coloca os itens do cabeçalho um embaixo do outro, em vez de lado a lado */
+            gap: 8px;
+        }
     }
