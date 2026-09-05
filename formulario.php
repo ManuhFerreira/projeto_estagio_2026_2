@@ -72,10 +72,10 @@
 
                 <label for="parcelas"><br>Quantidade de parcelas(via pix): <br></label>
                 <select name="parcelas" id="parcelas">
-                    <option value="1x">1x R$1.850,00</option>
-                    <option value="2x">2x R$925,00</option>
-                    <option value="5x">5x R$370,00</option>
-                    <option value="10x">10x R$185,00</option>
+                    <option value="1">1x R$1.850,00</option>
+                    <option value="2">2x R$925,00</option>
+                    <option value="5">5x R$370,00</option>
+                    <option value="10">10x R$185,00</option>
                 </select>
                 
                 <label for="observacoes"><br>Observações: <br></label>
@@ -90,6 +90,5 @@
     <footer>
         Emanuele Ferreira &copy; - 2026
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

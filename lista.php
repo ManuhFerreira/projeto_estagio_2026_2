@@ -26,6 +26,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Nome</th>
                             <th>Data de Nascimento</th>
                             <th>CPF</th>
@@ -41,6 +42,7 @@
                         <?php foreach ($pessoa as $tbpessoas): ?>
                                 
                             <tr>
+                                <td><?php echo $tbpessoas->id; ?></td>
                                 <td><?php echo $tbpessoas->nomecompleto; ?></td>
                                 <td><?php echo $tbpessoas->nascimento; ?></td>
                                 <td><?php echo $tbpessoas->cpf; ?></td>
@@ -48,10 +50,12 @@
                                 <td><?php echo $tbpessoas->cidade; ?></td>
                                 <td><?php echo $tbpessoas->parcelas; ?></td>
                                 <td><?php echo $tbpessoas->observacoes; ?></td>
-                                <td><?php echo $tbpessoas->status; ?></td>
+                                <td style="font-weight: bold;"><?php echo $tbpessoas->status; ?></td>
                                 <td>
-                                    <span class="editar" title="Editar">✏️</span>
-                                    <span class="excluir" title="Excluir">🗑️</span>
+                                    <a href="editar.php?id=<?php echo $tbpessoas->id; ?>" class="editar" style="text-decoration: none;">✏️</a>
+                                    <a href="excluir.php?id=<?php echo $tbpessoas->id; ?>" class="excluir"
+                                        style="text-decoration: none;"
+                                        onclick="return confirm('Tem certeza que deseja excluir este cadastro?');">🗑️</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
