@@ -22,7 +22,7 @@
 <body>
     <main>
         <div class="lista">
-            <button type="button" class="voltar">&#8592;</button>
+            <button type="button" class="logout" onclick="window.location.href = 'logout.php'">&times;</button>
             <h1>Lista de Pessoas</h1>
             <div class="filtro">
                 <input type="search" name="filtro" id="filtro" placeholder="Pesquisar">
@@ -49,7 +49,7 @@
                             <tr>
                                 <td><?php echo $tbpessoas->id; ?></td>
                                 <td><?php echo $tbpessoas->nomecompleto; ?></td>
-                                <td><?php echo $tbpessoas->nascimento; ?></td>
+                                <td><?php echo date("d/m/Y", strtotime($tbpessoas->nascimento)); ?></td>
                                 <td><?php echo $tbpessoas->cpf; ?></td>
                                 <td><?php echo $tbpessoas->celular; ?></td>
                                 <td><?php echo $tbpessoas->cidade; ?></td>
@@ -69,5 +69,26 @@
             </div>
         </div>
     </main>
+    <script>
+
+    const linhasTabela = document.querySelectorAll('table tbody tr');
+    const filtro = document.querySelector('input[type="search"]');
+
+    //faz a filtragem dos produtos de acordo com o que o usuário digitar
+    filtro.addEventListener('input', function() {
+        linhasTabela.forEach(function(linha) {
+            const celulas = linha.querySelectorAll('td');
+            const nomeProduto = celulas[1].textContent;
+            const textoDigitado = filtro.value;
+            const bateComABusca = nomeProduto.toLowerCase().includes(textoDigitado.toLowerCase());
+
+            if (bateComABusca){
+                linha.style.display = "table-row";
+            } else {
+                linha.style.display = "none";
+            }
+        });
+    });
+    </script>
 </body>
 </html>
