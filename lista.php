@@ -1,7 +1,12 @@
 <?php
-    require 'rb.php';
-    R::setup ('mysql:host=localhost;dbname=projeto_estagio_2026_2',
-        'root', '');
+    session_start();
+
+    if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
+        header("Location: formulario.php");
+        exit;
+    }
+
+    require 'conexaoBD.php';
 
     $pessoa = R::findAll('tbPessoas');
 ?>

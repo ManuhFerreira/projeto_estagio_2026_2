@@ -40,7 +40,7 @@
 
     <main>
         <div class="formulario">
-            <button type="button" class="acesso"><i class="fa-solid fa-lock"></i></button>
+            <button type="button" class="acesso" onclick="window.location.href = 'login.php'"><i class="fa-solid fa-lock"></i></button>
             <div class="informacoes">
             <h2>-Informações- </h2>
             <h3>Tema: Do Alto da Montanha</h3>

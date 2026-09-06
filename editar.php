@@ -1,7 +1,12 @@
 <?php 
-    require 'rb.php';
-    R::setup ('mysql:host=localhost;dbname=projeto_estagio_2026_2',
-        'root', '');
+    session_start();
+
+    if(!isset($_SESSION['logado']) || $_SESSION['logado'] !== true){
+        header("Location: formulario.php");
+        exit;
+    }
+
+    require 'conexaoBD.php';
     
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $id_pessoa = $_POST['id'];
@@ -54,6 +59,7 @@
     <main>
         <form action="editar.php" method="POST">
             <div class="cadastro">
+                 <button type="button" class="voltar" onclick="window.location.href = 'lista.php'">&#8592;</button>
                 <h2>Ficha de Cadastro</h2>
 
                 <input type="hidden" name="id" value="<?php echo $pessoa->id; ?>">

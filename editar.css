@@ -28,6 +28,23 @@
         transition: all 0.3s ease;
     }
 
+    .voltar {
+        display: block;
+        margin-left: auto;
+        align-self: flex-end;
+        padding: 8px;
+        background-color: white;
+        border: 2px solid #7C7E4E;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .voltar:hover {
+        background-color: #a9a9a9;
+        transform: translateY(-1px);
+    }
+
     .cabecalho {
         display: flex;
         justify-content: center;
@@ -57,7 +74,7 @@
     }
 
     .cadastro {
-        margin-top: 20px;
+        margin-top: 8px;
         display: flex;
         flex-direction: column;
         width: 100%;
